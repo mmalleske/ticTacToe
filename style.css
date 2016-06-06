@@ -13,12 +13,14 @@ header {
 /*Game Area*/
 .container {
   padding: 20px;
+  margin: 10px;
   background-color: red;
 
 }
 #gameBoard{
-  margin-left: auto;
-  margin-right: auto;
+  width: 100px;
+  margin: auto;
+  margin-top: 70px;
 }
 #scoreboardP1{
   float: left;
@@ -37,8 +39,8 @@ footer {
   text-align: center;
 }
 .contact > li {
-  display: inline;
-  letter-spacing: 5px;
+  display: inline-block;
   text-transform: uppercase;
-  margin: 0 1% 0 1%;
+  padding: 10px;
 }
+
