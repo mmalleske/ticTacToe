@@ -1,0 +1,30 @@
+header {
+  background-color: #99b3ff;
+  text-align: center;
+}
+.header {
+  display: inline;
+}
+
+h1 {
+
+}
+img {
+  width: 50px;
+}
+.gameArea > .container{
+  text-align: center;
+}
+
+/*.container {
+  display: inline;
+  /*text-align: center;*/
+}*/
+
+.contact {
+  text-align: center;
+}
+.contact > li {
+  display: inline;
+  padding: 50px;
+}
