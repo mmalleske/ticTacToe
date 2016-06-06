@@ -7,46 +7,42 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header id="header" class="">
-    <!-- <div class="navBar"> -->
-      <a href=""><img src="./alien-egg-icon.png"></a>
-      <h1 class="title">Tic Tac Toe</h1>
-      <a href=""><img src="./gear.png"></a>
-    <!-- </div> -->
+  <header>
+    <a class="navBar" href=""><img src="./alien-egg-icon.png"></a>
+    <h1 class="navBar">Tic Tac Toe</h1>
+    <a class="navBar" href=""><img src="./gear.png"></a>
   </header>
 
   <section class="gameArea">
     <div id="scoreboardP1" class="container">
       <h2>Player 1</h2>
     </div>
-    <div id="gameBoard" class="container">
-      <table>
-        <tr>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-        </tr>
-        <tr>
-          <td>D</td>
-          <td>E</td>
-          <td>F</td>
-        </tr>
-        <tr>
-          <td>G</td>
-          <td>H</td>
-          <td>I</td>
-        </tr>
-      </table>
-    </div>
     <div id="scoreboardP2" class="container">
       <h2>Player 2</h2>
     </div>
+    <table id="gameBoard" class="container">
+      <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td>H</td>
+        <td>I</td>
+      </tr>
+    </table>
   </section>
   <footer>
     <ul class="contact">
-      <li>Mike Malleske</li>
-      <li>mmalleske@gmail.com</li>
-      <li>(512)497.0811</li>
+      <li id="Name">Mike Malleske</li>
+      <li id="email">mmalleske@gmail.com</li>
+      <li id="phone">(512)497.0811</li>
     </ul>
   </footer>
 
