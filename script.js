@@ -1,15 +1,23 @@
 $( document ).ready(function() {
 //mouseover color change
-  $('.cell').mouseover(function() {
+  $('.cell').mouseenter(function() {
     $( this ).css( "background-color", "#57c4d0" );
-  })
-  $('.cell').mouseleave(function() {
-    debugger
-    $( this ).css( "background-color", "#orange" );
   });
+  $('.cell').mouseleave(function() {
+    $( this ).css( "background-color", "orange" );
+  });
+  // .on("mouseleave"(function() {
+  //   var styles = {
+  //     background-color: orange;
+  //   }
+  //   $( this ).css(styles);
+  // });
+
+
+  //click
   $('.cell').click(function(e) {
     e.preventDefault();
-    $( this ).css( "background-color", "#57c4d0" );
+    $( this ).css( "background-color", "red" );
   });
 
 });
