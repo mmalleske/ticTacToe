@@ -1,6 +1,19 @@
-/*Hader/Navigation*/
+/*colors
+player1 green: #57c4d0;
+player1 green on click: #57c4d0;
+player2 fuscia : #990099;
+player2 fuscia on click : #4d004d;
+
+*/
+
+body {
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: white;
+}
 header {
-  background-color: #99b3ff;
+  background-color: black;
   /*background-size: cover;*/
   text-align: center;
   height: 50px;
@@ -20,17 +33,16 @@ header {
   width: 50px;
 }
 /*Game Area*/
-.container {
-  padding: 20px;
-  margin: 15px auto;
-  background-color: grey;
-  text-align: center;
+.gameArea {
+  padding: 20% 0 20% 0;
+  background-color: #e6fff2;
 }
 
-td {
-  margin: 4px;
-  padding: 15px;
-  background-color: orange;
+.container {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: grey;
+  text-align: center;
 }
 #scoreboardP1{
   float: left;
@@ -40,13 +52,44 @@ td {
   float: right;
   margin-right: 40px;
 }
+h2 {
+  /*border-bottom: 3px solid #57c4d0;*/
+  font-size: 24px;
+  display: block;
+}
+#startButton {
+  margin: 0 auto;
+  font-size: 2em;
+  width: 150px;
+}
 
+#scoreboardP1 > h2{
+  border-bottom: 3px solid #57c4d0;
+}
+#scoreboardP2 > h2{
+  border-bottom: 3px solid #990099;
+}
+span {
+  display: block;
+  text-align: left;
+}
+.gameArea a{
+  margin: 2px;
+  padding: 30px;
+  background-color: orange;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
 /*Footer*/
 footer {
   background-color: black;
   padding: 25px;
   text-align: center;
-  margin-top: 30%;
+  /*margin-top: 30%;*/
 }
 .contact {
   display: inline;
