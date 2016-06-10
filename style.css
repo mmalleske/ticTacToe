@@ -57,7 +57,7 @@ h2 {
   font-size: 24px;
   display: block;
 }
-#startButton {
+#resetButton {
   margin: 0 auto;
   font-size: 2em;
   width: 150px;
@@ -84,15 +84,22 @@ span {
   text-decoration: none;
   color: white;
 }
-
-.oPiece{
+td > span{
   background-color: white;
-  color:#57c4d0;
   padding : 2px 10px;
+  width: 30px;
   font-size: 40px;
-  border: 3px solid #57c4d0;
   border-radius: 4px;
   text-align: center;
+  margin: 2px;
+}
+.oPiece{
+  color:#57c4d0;
+  border: 3px solid #57c4d0;
+}
+.xPiece{
+  color:#990099;
+  border: 3px solid #990099;
 }
 /*Footer*/
 footer {
