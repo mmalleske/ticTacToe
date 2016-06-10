@@ -1,33 +1,26 @@
 $( document ).ready(function() {
 //mouseover color change
+  var clicked = false;
+  var cellColor = "orange";
   $('.cell').mouseenter(function() {
-    $( this ).css( "background-color", "#57c4d0" );
+    $( this ).children('a').css( "background-color", "#57c4d0" );
   });
   $('.cell').mouseleave(function() {
-    $( this ).css( "background-color", "orange" );
+    $( this ).children('a').css( "background-color", cellColor );
   });
-  // .on("mouseleave"(function() {
-  //   var styles = {
-  //     background-color: orange;
-  //   }
-  //   $( this ).css(styles);
-  // });
-
-
-  //click
+//click
   $('.cell').click(function(e) {
     e.preventDefault();
-    $( this ).css( "background-color", "red" );
+    clicked = true;
+    //cellColor = "white";
+    $( this ).children('a').hide(200);
+    $( this ).append('<span class="oPiece" style="background-color: white; color:#57c4d0;  padding : 2px 10px; font-size: 40px; border: 3px solid #57c4d0; border-radius: 4px; text-align: center;">O</span>');
+    $('.oPiece').css("background-color, #57c4d0");
   });
 
+
+
+  function turnManager(){
+
+  }
 });
-// $( "p" ).on( "mouseenter", function() {
-//     $( this ).css("background-color": "yellow");
-//   })
-//   .on("mouseleave", function() {
-//     var styles = {
-//       backgroundColor : "#ddd",
-//       fontWeight: ""
-//     };
-//     ??? ---> $( this ).css( styles );
-//   });
