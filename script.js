@@ -8,10 +8,11 @@ $( document ).ready(function() {
         [0,3,6], [1,4,7], [2,5,8],//vertical win
         [0,4,8], [2,4,6]//diagonal win
       ];
-    //initialize gameboard
+//initialize gameboard
     var playerOne = true;
-    $('.oPiece').hide(0);
-    $('.xPiece').hide(0);
+    var p1Wins = 0;
+    var p2Wins = 0;
+    $('.oPiece, .xPiece, #winnerBoard').hide(0);
     ////mouseover color change
     $('.cell').mouseenter(function() {
       if (playerOne){
@@ -24,7 +25,7 @@ $( document ).ready(function() {
     $('.cell').mouseleave(function() {
       $( this ).children('a').css( "background-color", "orange" );
     });
-    //click
+//click cells
     $('.cellButton').click(function(e) {
       e.preventDefault();
       var cellNum = ($( this ).parent('.cell').attr('id'));
@@ -39,13 +40,20 @@ $( document ).ready(function() {
       }
       $( this ).hide();
       playerOne = !playerOne;
-      var winner = getWinner();
-      if (winner == "Player 1"){
-        console.log("Player 1 Wins");
-      }
-      else if (winner == "Player 2"){
-        console.log("Player 2 Wins")
-      }
+      getWinner();
+      //updateScoreBoard(currentWinner);
+    });
+    //reset
+    $('#resetButton').click(function(event) {
+      event.preventDefault();
+      playerOne = true;
+      $('.oPiece, .xPiece, #winnerBoard').hide(0);
+      $('.cellButton').show(100);
+      cellArray = ['cell_0', 'cell_1', 'cell_2',
+                      'cell_3', 'cell_4', 'cell_5',
+                      'cell_6', 'cell_7', 'cell_8'];
+      currentWinner = null;
+      winner = null;
     });
     function getWinner(){
       var winner;
@@ -57,25 +65,51 @@ $( document ).ready(function() {
             p1Points += 1;
             if(p1Points == 3){
               winner = "Player 1";
+              p1Points = 0;
             }
           }
           else if(cellArray[winningConditions[i][j]] == 'X'){
             p2Points += 1;
-            console.log(p2Points);
             if(p2Points == 3){
-              winner = "Player 2"
+              winner = "Player 2";
+              p2Points = 0;
             }
           }
         }
       }
-      return winner;
+      if (winner == "Player 1"){
+        $('#winnerBoard').html("Player 1 Wins!");
+        $('.cellButton, .oPiece, .xPiece').hide(200);
+        $('#winnerBoard').show(1000);
+        p1Points = 0;
+        p2Points = 0;
+        // winner = null;
+      }
+      else if (winner == "Player 2"){
+        $('#winnerBoard').html("Player 2 Wins!");
+        $('.cellButton, .oPiece, .xPiece').hide(200);
+        $('#winnerBoard').show(200);
+        p1Points = 0;
+        p2Points = 0;
+        // winner = null;
+      }
+      updateScoreBoard(winner);
+      winner = null;
+      console.log(winner);
+      //return winner;
+    }
+    function updateScoreBoard(winner){
+      if (winner === "Player 1"){
+        p1Wins ++;
+        $('#scoreboardP1').children('.wins').html("Wins: " + p1Wins);
+        $('#scoreboardP2').children('.losses').html("Losses: " + p1Wins);
+      }
+      if (winner === "Player 2"){
+        p2Wins ++;
+        $('#scoreboardP2').children('.wins').html("Wins: " + p2Wins);
+        $('#scoreboardP1').children('.losses').html("Losses: " + p2Wins);
+      }
     }
   }
   ticTacToe();
-
-
-
-
-
-
 });
